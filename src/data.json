@@ -1,0 +1,243 @@
+{
+    "name": "ingressgateway",
+    "type": "service",
+    "environment": "dev",
+    "instances": 23,
+    "children": [
+        {
+            "name": "dev1-uswest2",
+            "type": "fi",
+            "environment": "dev",
+            "instances": 14,
+            "children": [
+                {
+                    "name": "core002",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 6,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "fi",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                },
+                {
+                    "name": "foundation",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                },
+                {
+                    "name": "cdp002",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                },
+                {
+                    "name": "scratchpad2",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                },
+                {
+                    "name": "scratchpad3",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "test1-uswest2",
+            "type": "fi",
+            "environment": "dev",
+            "instances": 3,
+            "children": [
+                {
+                    "name": "core3",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                },
+                {
+                    "name": "core4",
+                    "type": "fd",
+                    "environment": "dev",
+                    "instances": 1,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "dev"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "perf1-uswest2",
+            "type": "fi",
+            "environment": "perf",
+            "instances": 4,
+            "children": [
+                {
+                    "name": "core1",
+                    "type": "fd",
+                    "environment": "perf",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "perf"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "perf"
+                        }
+                    ]
+                },
+                {
+                    "name": "coretip1",
+                    "type": "fd",
+                    "environment": "perf",
+                    "instances": 2,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "perf"
+                        },
+                        {
+                            "name": "ingressgateway-remote-fd",
+                            "type": "instance",
+                            "environment": "perf"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "aws-stage1-useast2",
+            "type": "fi",
+            "environment": "stage",
+            "instances": 2,
+            "children": [
+                {
+                    "name": "core1",
+                    "type": "fd",
+                    "environment": "stage",
+                    "instances": 1,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "stage"
+                        }
+                    ]
+                },
+                {
+                    "name": "coretip1",
+                    "type": "fd",
+                    "environment": "stage",
+                    "instances": 1,
+                    "children": [
+                        {
+                            "name": "ingressgateway-fd",
+                            "type": "instance",
+                            "environment": "stage"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
